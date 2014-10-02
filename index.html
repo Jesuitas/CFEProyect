@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>CFEReports</title>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/cfe.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.3.min.css"/>
+	<style type="text/css">
+	a:link {
+	color: #FFF;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+	color: #060;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+    </style>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script  src="css/jquery.mobile-1.4.3.min.js"></script>
+  </head>
+     <body>
+     <div data-role="page" id="pag1">
+       <div data-role="header">
+         <h1>Encabezado</h1>
+       </div>
+       <div data-role="content"><p align="center">Por favor, rellene el siguiente formulario para levantar un reporte.</p>
+        	<div id="contenido">
+    
+     <form>
+        <br> 
+       <label>Indiquenos su problema </label>
+     
+       <select id="opcion" name="opcion">
+        <option value="1"> Se fue la luz en mi casa</option>
+        <option value="2"> Se fue la luz en mi colonia </option> 
+        <option value="3"> El transformador hace ruidos extraños </option>
+        <option value="4"> El CFEMatico no esta funcionando </option>
+        <option value="5"> No puedo pagar en el CFEMatico </option>
+       </select>
+      <br>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+        <label>Ubicación </label>
+       <input type="text" id="nombre" />
+		</div>
+        <p class="ui-block-b">&nbsp;</p>
+        <p class="ui-block-b"> 
+          <input type="image" src="img/ubi2.png" align="middle" width="30%" />   </p>
+        <div class="ui-block-b"></div>
+      </div>
+      <br>  <input type="submit" class="ui-block-b" id="btn" value="Enviar" width="20"/>
+     </p>
+     </form>
+     
+    </div>
+      </div>
+         <div data-role="footer" >
+         <div class="ui-grid-c">
+           <div class="ui-block-a" align="center"><a href="#"><img src="img/reportes.png" width="40%"><br>Reportes</a></div>
+           <div class="ui-block-b" align="center"><a href="#pag2"><img src="img/pagar.png" width="40%"><br>CFEMatico</a> </div>
+           <div class="ui-block-c" align="center"><a href="#pag3"><img src="img/config.png" width="40%"><br>Configuracion</a></div>
+           <div class="ui-block-d" align="center"><a href="#pag4"><img src="img/fedback.png" width="40%"><br>FeedBack </a></div>
+         </div>
+        
+       </div>
+     </div>
+     <div data-role="page" id="pag2">
+       <div data-role="header">
+         <h1>Encabezado</h1>
+       </div>
+       <div data-role="content">Contenido</div>
+       <div data-role="footer" style="position: relative; margin-top: -5px;">
+        <div class="ui-grid-c">
+           <div class="ui-block-a" align="center"><a href="#pag1">Reportes</a></div>
+           <div class="ui-block-b" align="center"><a href="#pag2">¿Donde Pagar?</a> </div>
+           <div class="ui-block-c" align="center"><a href="#pag3">Conf.</a></div>
+           <div class="ui-block-d" align="center"><a href="#pag4">FeedBack</a></div>
+         </div>
+       </div>
+     </div>
+     <div data-role="page" id="pag3">
+       <div data-role="header">
+         <h1>Configuracion</h1>
+       </div>
+       <div data-role="content">Contenido</div>
+       
+         <div data-role="footer" style="position: relative; margin-top: 325px;">
+         <div class="ui-grid-c">
+           <div class="ui-block-a" align="center"><a href="#pag1">Reportes</a></div>
+           <div class="ui-block-b" align="center"><a href="#pag2">¿Donde Pagar?</a> </div>
+           <div class="ui-block-c" align="center"><a href="#">Conf.</a></div>
+           <div class="ui-block-d" align="center"><a href="#pag4">FeedBack</a></div>
+         </div>
+        
+       </div>
+       </div>
+     <div data-role="page" id="pag4">
+       <div data-role="header">
+         <h1>Encabezado</h1>
+       </div>
+       <div data-role="content">Contenido</div>
+         <div data-role="footer" style="position: relative; margin-top: 325px;">
+        <div class="ui-grid-c">
+           <div class="ui-block-a" align="center"><a href="#pag1">Reportes</a></div>
+           <div class="ui-block-b" align="center"><a href="#pag2">¿Donde Pagar?</a> </div>
+           <div class="ui-block-c" align="center"><a href="#pag3">Conf.</a></div>
+           <div class="ui-block-d" align="center"><a href="#">FeedBack</a></div>
+         </div>
+        
+       </div>
+       </div>
+     </div>
+     
+     
+     </body>
+</html>
