@@ -26,11 +26,19 @@ a:active {
     </style>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script  src="css/jquery.mobile-1.4.3.min.js"></script>
+    
+    <script type="text/javascript" src="js/post.js"></script><script type="text/javascript">// <![CDATA[
+        function onBodyLoad() {
+            document.addEventListener("deviceready",onDeviceReady,false);
+        }
+ 
+// ]]></script>
   </head>
      <body>
      <div data-role="page" id="pag1">
-       <div data-role="header">
-         <h1>Encabezado</h1>
+     <br>
+       <div data-role="header" align="center">
+         <img src="img/headerCfe_Reporte.png" width="100%">
        </div>
        <div data-role="content"><p align="center">Por favor, rellene el siguiente formulario para levantar un reporte.</p>
         	<div id="contenido">
@@ -39,7 +47,7 @@ a:active {
         <br> 
        <label>Indiquenos su problema </label>
      
-       <select id="opcion" name="opcion">
+       <select name="opcion" size="1" id="opcion">
         <option value="1"> Se fue la luz en mi casa</option>
         <option value="2"> Se fue la luz en mi colonia </option> 
         <option value="3"> El transformador hace ruidos extraños </option>
@@ -65,10 +73,10 @@ a:active {
       </div>
          <div data-role="footer" >
          <div class="ui-grid-c">
-           <div class="ui-block-a" align="center"><a href="#"><img src="img/reportes.png" width="40%"><br>Reportes</a></div>
-           <div class="ui-block-b" align="center"><a href="#pag2"><img src="img/pagar.png" width="40%"><br>CFEMatico</a> </div>
-           <div class="ui-block-c" align="center"><a href="#pag3"><img src="img/config.png" width="40%"><br>Configuracion</a></div>
-           <div class="ui-block-d" align="center"><a href="#pag4"><img src="img/fedback.png" width="40%"><br>FeedBack </a></div>
+           <div class="ui-block-a" align="center"><a href="#pag1"><img src="img/reportes.png" width="50%"></a></div>
+           <div class="ui-block-b" align="center"><a href="#pag2"><img src="img/pagar.png" width="50%"></a> </div>
+           <div class="ui-block-c" align="center"><a href="#pag3"><img src="img/config.png" width="50%"></a></div>
+           <div class="ui-block-d" align="center"><a href="#pag4"><img src="img/fedback.png" width="50%"> </a></div>
          </div>
         
        </div>
@@ -80,10 +88,11 @@ a:active {
        <div data-role="content">Contenido</div>
        <div data-role="footer" style="position: relative; margin-top: -5px;">
         <div class="ui-grid-c">
-           <div class="ui-block-a" align="center"><a href="#pag1">Reportes</a></div>
-           <div class="ui-block-b" align="center"><a href="#pag2">¿Donde Pagar?</a> </div>
-           <div class="ui-block-c" align="center"><a href="#pag3">Conf.</a></div>
-           <div class="ui-block-d" align="center"><a href="#pag4">FeedBack</a></div>
+                <div class="ui-block-a" align="center"><a href="#pag1"><img src="img/reportes.png" width="40%"></a></div>
+           <div class="ui-block-b" align="center"><a href="#pag2"><img src="img/pagar.png" width="40%"></a> </div>
+           <div class="ui-block-c" align="center"><a href="#pag3"><img src="img/config.png" width="40%"></a></div>
+           <div class="ui-block-d" align="center"><a href="#pag4"><img src="img/fedback.png" width="40%"> </a></div>
+         </div>
          </div>
        </div>
      </div>
@@ -95,10 +104,11 @@ a:active {
        
          <div data-role="footer" style="position: relative; margin-top: 325px;">
          <div class="ui-grid-c">
-           <div class="ui-block-a" align="center"><a href="#pag1">Reportes</a></div>
-           <div class="ui-block-b" align="center"><a href="#pag2">¿Donde Pagar?</a> </div>
-           <div class="ui-block-c" align="center"><a href="#">Conf.</a></div>
-           <div class="ui-block-d" align="center"><a href="#pag4">FeedBack</a></div>
+           <div class="ui-block-a" align="center"><a href="#pag1"><img src="img/reportes.png" width="40%"></a></div>
+           <div class="ui-block-b" align="center"><a href="#pag2"><img src="img/pagar.png" width="40%"></a> </div>
+           <div class="ui-block-c" align="center"><a href="#pag3"><img src="img/config.png" width="40%"></a></div>
+           <div class="ui-block-d" align="center"><a href="#pag4"><img src="img/fedback.png" width="40%"> </a></div>
+         </div>
          </div>
         
        </div>
@@ -110,10 +120,11 @@ a:active {
        <div data-role="content">Contenido</div>
          <div data-role="footer" style="position: relative; margin-top: 325px;">
         <div class="ui-grid-c">
-           <div class="ui-block-a" align="center"><a href="#pag1">Reportes</a></div>
-           <div class="ui-block-b" align="center"><a href="#pag2">¿Donde Pagar?</a> </div>
-           <div class="ui-block-c" align="center"><a href="#pag3">Conf.</a></div>
-           <div class="ui-block-d" align="center"><a href="#">FeedBack</a></div>
+               <div class="ui-block-a" align="center"><a href="#pag1"><img src="img/reportes.png" width="40%"></a></div>
+           <div class="ui-block-b" align="center"><a href="#pag2"><img src="img/pagar.png" width="40%"></a> </div>
+           <div class="ui-block-c" align="center"><a href="#pag3"><img src="img/config.png" width="40%"></a></div>
+           <div class="ui-block-d" align="center"><a href="#pag4"><img src="img/fedback.png" width="40%"> </a></div>
+         </div>
          </div>
         
        </div>
