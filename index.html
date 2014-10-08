@@ -41,13 +41,13 @@ a:active {
          <img src="img/headerCfe_Reporte.png" width="100%">
        </div>
        <div data-role="content"><p align="center">Por favor, rellene el siguiente formulario para levantar un reporte.</p>
-        	<div id="contenido">
-    
-     <form>
+        	<div id="contenido" >
+    <div id="mandar" data-datos-id="1">
+     <form onSubmit="js/post.js">
         <br> 
        <label>Indiquenos su problema </label>
      
-       <select name="opcion" size="1" id="opcion">
+       <select name="combo" size="1" id="combo">
         <option value="1"> Se fue la luz en mi casa</option>
         <option value="2"> Se fue la luz en mi colonia </option> 
         <option value="3"> El transformador hace ruidos extraños </option>
@@ -56,7 +56,7 @@ a:active {
        </select>
       <br>
       <div class="ui-grid-a">
-        <div class="ui-block-a">
+        <div class="ui-block-a"  >
         <label>Ubicación </label>
        <input type="text" id="nombre" />
 		</div>
@@ -69,7 +69,7 @@ a:active {
      </p>
      </form>
      
-    </div>
+    </div></div>
       </div>
          <div data-role="footer" >
          <div class="ui-grid-c">
@@ -83,7 +83,7 @@ a:active {
      </div>
      <div data-role="page" id="pag2">
        <div data-role="header">
-         <h1>Encabezado</h1>
+         <img src="img/headerCfe_pago.png" width="100%">
        </div>
        <div data-role="content">Contenido</div>
        <div data-role="footer" style="position: relative; margin-top: -5px;">
@@ -98,7 +98,7 @@ a:active {
      </div>
      <div data-role="page" id="pag3">
        <div data-role="header">
-         <h1>Configuracion</h1>
+         <img src="img/headerCfe-Config.png" width="100%">
        </div>
        <div data-role="content">Contenido</div>
        
@@ -115,9 +115,16 @@ a:active {
        </div>
      <div data-role="page" id="pag4">
        <div data-role="header">
-         <h1>Encabezado</h1>
+         <img src="img/headerCfe-Rss.png" width="100%">
        </div>
-       <div data-role="content">Contenido</div>
+       <div data-role="content" align="center">
+        <h3> ¿Tienes alguna duda? <br> Estamos para servirte:</h3>
+        <a href="https://www.facebook.com/pages/CFE-Proyect/1512348949008956?fref=ts"> 
+      <img src="img/Facebook.png" width="200" height="200"> </a>
+         
+      <a href="https://twitter.com/AppCfe"> <img src="img/twitter_logo.png" width="200" height="200"> </a>
+
+       </div>
          <div data-role="footer" style="position: relative; margin-top: 325px;">
         <div class="ui-grid-c">
                <div class="ui-block-a" align="center"><a href="#pag1"><img src="img/reportes.png" width="40%"></a></div>
