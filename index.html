@@ -4,9 +4,9 @@
         <title>CFEReports</title>
 <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/cfe.min.css" />
-	<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
-	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.3.min.css"/>
+	<link rel="stylesheet" href="file:///C|/Users/krlos/Desktop/CFEProyect-master/CFEProyect-master/css/cfe.min.css" />
+	<link rel="stylesheet" href="file:///C|/Users/krlos/Desktop/CFEProyect-master/CFEProyect-master/css/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="file:///C|/Users/krlos/Desktop/CFEProyect-master/CFEProyect-master/css/jquery.mobile.structure-1.4.3.min.css"/>
 	<style type="text/css">
 	a:link {
 	color: #FFF;
@@ -25,7 +25,7 @@ a:active {
 }
     </style>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script  src="css/jquery.mobile-1.4.3.min.js"></script>
+	<script  src="file:///C|/Users/krlos/Desktop/CFEProyect-master/CFEProyect-master/css/jquery.mobile-1.4.3.min.js"></script>
   </head>
      <body>
      <div data-role="page" id="pag1">
@@ -54,7 +54,8 @@ a:active {
 		</div>
         <p class="ui-block-b">&nbsp;</p>
         <p class="ui-block-b"> 
-          <input type="image" src="img/ubi2.png" align="middle" width="30%" />   </p>
+          <input type="image" src="file:///C|/Users/krlos/Desktop/CFEProyect-master/CFEProyect-master/img/ubi2.png" align="middle" width="30%" />
+      </p>
         <div class="ui-block-b"></div>
       </div>
       <br>  <input type="submit" class="ui-block-b" id="btn" value="Enviar" width="20"/>
@@ -65,19 +66,80 @@ a:active {
       </div>
          <div data-role="footer" >
          <div class="ui-grid-c">
-           <div class="ui-block-a" align="center"><a href="#"><img src="img/reportes.png" width="40%"><br>Reportes</a></div>
-           <div class="ui-block-b" align="center"><a href="#pag2"><img src="img/pagar.png" width="40%"><br>CFEMatico</a> </div>
-           <div class="ui-block-c" align="center"><a href="#pag3"><img src="img/config.png" width="40%"><br>Configuracion</a></div>
-           <div class="ui-block-d" align="center"><a href="#pag4"><img src="img/fedback.png" width="40%"><br>FeedBack </a></div>
+           <div class="ui-block-a" align="center"><a href="#"><img src="file:///C|/Users/krlos/Desktop/CFEProyect-master/CFEProyect-master/img/reportes.png" width="40%"><br>Reportes</a></div>
+           <div class="ui-block-b" align="center"><a href="#pag2"><img src="file:///C|/Users/krlos/Desktop/CFEProyect-master/CFEProyect-master/img/pagar.png" width="40%"><br>CFEMatico</a> </div>
+           <div class="ui-block-c" align="center"><a href="#pag3"><img src="file:///C|/Users/krlos/Desktop/CFEProyect-master/CFEProyect-master/img/config.png" width="40%"><br>Configuracion</a></div>
+           <div class="ui-block-d" align="center"><a href="#pag4"><img src="file:///C|/Users/krlos/Desktop/CFEProyect-master/CFEProyect-master/img/fedback.png" width="40%"><br>FeedBack </a></div>
          </div>
         
        </div>
      </div>
      <div data-role="page" id="pag2">
        <div data-role="header">
+       <script charset="utf-8" type="text/javascript" src="file:///C|/Users/krlos/Desktop/CFEProyect-master/CFEProyect-master/jquery.js"></script>
          <h1>Encabezado</h1>
+         <script>
+        	$( document ).on( "pageinit", "#paginaMapa", function(e,data) {
+				
+				var defaultPos = new google.maps.LatLng(20.678141, -103.347580);
+				
+				if (navigator.geolocation) {
+		                function exito(pos) {
+                     		MuestraMapa(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+						 
+                   		}
+						function falla(error) {
+						//si falla mostrar mpara en posicion por defecto
+							alert('Error en servicio Geolocalizador');
+							MuestraMapa(defaultPos); 
+						}
+						
+					//maximumAge- Guarda la posicion por 5 minutos 
+					//enableHighAccuracy: Se tratan de obtener los mejores resultados posible del GPS
+					//timeout: el tiempo maximo que se espera para obtener la posicion en este caso 5 segundos
+						var options = {maximumAge: 500000, enableHighAccuracy:true, timeout: 5000};
+						navigator.geolocation.getCurrentPosition(exito, falla, options );
+					}//FIN IF
+					else {
+                    MuestraMapa(defaultPos);  // No soporta geolocalizacion y dibuja el mapa en posicion Default
+               		 }
+					 
+					 //FUNCION DIBUJAR MAPa
+					 function MuestraMapa(latlng) {
+						
+						var myOptions = {
+                        zoom: 16,
+                        center: latlng,
+						disableDefaultUI: true,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP};
+						
+						var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+						var infowindow = new google.maps.InfoWindow({
+                                  position: latlng,
+                                  content: '<p>Tu posición actual</p>'+latlng
+								  });
+						
+						var marker = new google.maps.Marker({
+							position: latlng,
+							map: map,
+							title: "Mi posición",
+							animation: google.maps.Animation.DROP
+                    	});
+						google.maps.event.addListener(marker, 'click', function() {infowindow.open(map,marker);});
+						 
+					 }// Fin muestra mapa
+				
+				});
+        </script>
        </div>
-       <div data-role="content">Contenido</div>
+       <div data-role="content">Mapa de CFEmaticos</div>
+       <div> 
+       <iframe src="https://mapsengine.google.com/maps/d/embed?mid=zGIWwHUHZPzs.kBgS40lzHwj0" width="640" height="480"></iframe>
+       <div data-role="footer" style="position: relative; margin-top: -5px;">
+       <div><center><b>Busqueda de CFEMaticos</b></center> 
+</div> 
+</div>
+       </div>
        <div data-role="footer" style="position: relative; margin-top: -5px;">
         <div class="ui-grid-c">
            <div class="ui-block-a" align="center"><a href="#pag1">Reportes</a></div>
