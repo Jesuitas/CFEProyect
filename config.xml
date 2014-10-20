@@ -7,6 +7,10 @@
     <author email="daniel_k310a@hotmail.com" href="http://phonegap.com">
         Danny mc
     </author>
+	
+	<access origin="http://cfeproyect.comyr.com/proccess.php" />
+	<plugin name="NetworkStatus" value="CDVConnection" />
+
     <preference name="permissions" value="none" />
 	<gap:plugin name="org.transistorsoft.cordova.background-geolocation" version="0.3.2" />
     <preference name="phonegap-version" value="3.5.0" />
