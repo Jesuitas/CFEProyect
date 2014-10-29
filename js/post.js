@@ -1,8 +1,9 @@
 $(document).bind('deviceready', function(){
     $(function(){
         $('form').submit(function(){
-            var dataID = $(this).parent().attr('data-datos-id');
+            var data = $(this).parent().attr('data-datos-id');
             var postData = $(this).serialize();
+			
             $.ajax({
                 type: 'POST',
                 data: postData+'&lid='+dataID,
@@ -10,8 +11,8 @@ $(document).bind('deviceready', function(){
                 url: 'http://cfeproyect.comyr.com/enviar.php',
                 success: function(data){
                     console.log(data);
-                    $('#opcion').val('');
-                    $('#comentario').val('');
+                    $('#combo').val('');
+                    $('#nombre').val('');
                     alert('Tu comentario fue agregado');
                 },
                 error: function(data){
