@@ -12,6 +12,8 @@ $result = mysql_query("SELECT * FROM usuario where servicio='$service'");
 $cfe = mysql_fetch_array($result);
 $usuarioServicio = $cfe['1'];
 $usuarioNombre = $cfe['2'];
+$usuarioMail = $cfe['3'];
+$usuarioTwit = $cfe['4'];
 
 /* verifica que el usuario y password concuerden correctamente */
 if( $usuarioServicio == $service  ){
@@ -27,6 +29,8 @@ $resultados["validacion"] = "error";
   mysql_close();
 //$resultados["hora"] = date("F j, Y, g:i a");
 $resultados["generador"] = $usuarioNombre ;
+$resultados["correo"] = $usuarioMail;
+$resultados["twitter"] = $usuarioTwit;
  
  
 
