@@ -29,7 +29,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Inicio</a></li>
         <li><a href="#">Reportador</a></li>
-        <li><a href="usuarios.php">Información de los usuarios</a></li>
+        <li><a href="#">Información de los usuarios</a></li>
        </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -65,7 +65,7 @@ if(isset($_SESSION['estado']) == 'Autenticado')
 			  </tr>';
 			  	mysql_connect('mysql6.000webhost.com', 'a9962371_dany', 'abogral90');
 				mysql_select_db('a9962371_reporte');
-				$result = mysql_query("SELECT reportes.id, incidencias.incidencia, reportes.status, reportes.locacion, usuario.nombre, reportes.fechaini,reportes.horaini
+				$result = mysql_query("SELECT reportes.id, incidencias.incidencia, reportes.status, reportes.locacion, usuario.nombre, reportes.fechaini
 				FROM reportes
 				INNER JOIN usuario
 				INNER JOIN incidencias
@@ -77,10 +77,8 @@ if(isset($_SESSION['estado']) == 'Autenticado')
 			  	echo '<tr>';
 				echo '<td>' . $registro['id'] . '</td>'; 
 				echo '<td>' . $registro['incidencia'] . '</td>';
-				echo '<td>' . '<p title="'.$registro['horaini'] .'"> ' . $registro['fechaini'] .'</p></td>';	
-				echo '<td>' . '<a href="https://www.google.com.mx/maps/place/'.$registro["locacion"].'/data=!4m2!3m1!1s0x0:0x0?hl=es">
-								<button type="button" class="btn btn-default btn-lg">Localizacion
-								<span class="glyphicon glyphicon-globe"></span></button></a> </td>';
+				echo '<td>' . $registro['fechaini'] .'</td>';	
+				echo '<td>' . $registro['locacion'] . '</td>';
 				echo '<td>' . $registro['nombre'] . '</td>';
 				echo '<td><form name="estados" id="estados" method="POST" action="cerrado.php">
 					<input type="hidden" value="'.$registro['id'].'" id ="ids" name="ids" />

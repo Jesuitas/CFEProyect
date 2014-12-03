@@ -27,9 +27,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Inicio</a></li>
+        <li><a href="home.php">Inicio</a></li>
         <li><a href="#">Reportador</a></li>
-        <li><a href="usuarios.php">Información de los usuarios</a></li>
+        <li class="active"><a href="#">Información de los usuarios</a></li>
        </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -55,38 +55,38 @@ if(isset($_SESSION['estado']) == 'Autenticado')
 {
 		 
  
-		echo '<h2> Reportes Registrados:';
+		echo '<h2> Información de los Usuarios:';
 		echo '</h2>
 		<div class="container">
 		<div class="table-responsive">
  			  <table class="table table-bordered">
 			  <tr>
-			  	<th>Id</th><th>Incidente</th><th>Activo desde:</th><th>Zona Reportada</th><th>Reportante</th><th>Acciones</th>
+			  	<th>Id</th><th>Servicio</th><th>Nombre</th><th>Email</th><th>Twitter</th><th>Acciones</th>
 			  </tr>';
 			  	mysql_connect('mysql6.000webhost.com', 'a9962371_dany', 'abogral90');
 				mysql_select_db('a9962371_reporte');
-				$result = mysql_query("SELECT reportes.id, incidencias.incidencia, reportes.status, reportes.locacion, usuario.nombre, reportes.fechaini,reportes.horaini
-				FROM reportes
-				INNER JOIN usuario
-				INNER JOIN incidencias
-				WHERE usuario.id_usuario = reportes.idcliente
-				AND incidencias.idrepo = reportes.idIncidente
-				AND reportes.status = 'activo'
-				ORDER BY 'reportes.id' ASC") or die ($Sql .mysql_error()."" ) ; 
+				$result = mysql_query("SELECT * FROM usuario") or die ($Sql .mysql_error()."" ) ; 
 			  	while ($registro = mysql_fetch_array($result)) {
 			  	echo '<tr>';
-				echo '<td>' . $registro['id'] . '</td>'; 
-				echo '<td>' . $registro['incidencia'] . '</td>';
-				echo '<td>' . '<p title="'.$registro['horaini'] .'"> ' . $registro['fechaini'] .'</p></td>';	
-				echo '<td>' . '<a href="https://www.google.com.mx/maps/place/'.$registro["locacion"].'/data=!4m2!3m1!1s0x0:0x0?hl=es">
-								<button type="button" class="btn btn-default btn-lg">Localizacion
-								<span class="glyphicon glyphicon-globe"></span></button></a> </td>';
-				echo '<td>' . $registro['nombre'] . '</td>';
-				echo '<td><form name="estados" id="estados" method="POST" action="cerrado.php">
-					<input type="hidden" value="'.$registro['id'].'" id ="ids" name="ids" />
-					<button type="submit" class="btn btn-default btn-sh" title="Cerrar Reporte">
-  					<span class="glyphicon glyphicon-ok-circle"></span> 
-</button>			</form> </td>';
+				echo '<td>' . $registro['Id_usuario'] . '</td>'; 
+				echo '<td>' . $registro['servicio'] . '</td>';
+				echo '<td>' . $registro['nombre'] .'</td>';	
+				echo '<td>' . $registro["email"] . '</td>';	
+				echo '<td>' . $registro['twitter'] . '</td>';
+				echo '<td><form name="estados" id="estados" method="POST" action="correo.php">
+					<input type="hidden" value="'.$registro['Id_usuario'].'" id ="ids" name="ids" />
+					<input type="hidden" value="'.$registro['email'].'" id ="email" name="email" />
+					<button type="submit" class="btn btn-default btn-sh" title="Editar Correo">
+  					<span class="glyphicon glyphicon-envelope"></span> 
+</button>			</form>
+
+<form name="estados" id="estados" method="POST" action="twitter.php">
+					<input type="hidden" value="'.$registro['Id_usuario'].'" id ="ids" name="ids" />
+<input type="hidden" value="'.$registro['twitter'].'" id ="twitter" name="twitter" />
+					<button type="submit" class="btn btn-default btn-sh" title="Editar Twitter">
+  					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAA3ElEQVR4AYXRMSt9cRzH8dfvdhdFSddqkM4gpqvUUTwDi82TcMqiWyKrYvcAZNXtPoH/ppyyKE7pv92Qze1Ihq/FKWU4fbZP7+n9TgAyu/r6KJUuVQCQFGrxa7VCAkhGwt+NJKAQJpp74sK+yqNnBWRqd1Y9/QA7IFlxo5ZxLDxgzpl7b7qA3KdwxFB4sQGYB3AihCFj4d0UAIBrIYw7YNqVBQAwIwc6SrDkFQAc6oGyAZb9kwPYtAe4JVP779Q2IDnwpfGZdVUGzm35MKtnzbpFAANVm+r2WK25vwFtdW1iRQkkwwAAAABJRU5ErkJggg7cb306daaba77f4fc8fed77dec726849"/> 
+</button>			</form>
+ </td>';
 				echo "</tr>";
 			}
 			mysql_free_result($result);

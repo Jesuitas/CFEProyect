@@ -19,8 +19,11 @@ mysql_close();
 mysql_connect('mysql6.000webhost.com', 'a9962371_dany', 'abogral90');
 mysql_select_db('a9962371_reporte');
 
-mysql_query("INSERT INTO reportes (idcliente,idIncidente,status,locacion)
-		 VALUES('$idUsuario','$reporte','$status','$geolocalizacion')", $coneccion);
+$fechaIni = date("d/m/Y");
+$horaIni = date("h:i:s");
+
+mysql_query("INSERT INTO reportes (idcliente,idIncidente,status,locacion,fechaini,horaini)
+VALUES('$idUsuario','$reporte','$status','$geolocalizacion','$fechaIni','$horaIni')", $coneccion);
 
 mysql_close();
 
