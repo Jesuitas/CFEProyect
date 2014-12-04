@@ -13,23 +13,32 @@
 
 <body>
 <div class="jumbotron">
+<div class="container">
 <form id="form1" name="form1" method="post" action="">
-<div> <label class="control-label" for="fail">Falla</label>
-<div class="controls">
-<input type="text" name="falla" id="falla" />
+<label class="control-label" for="fail">Falla</label>
+<select name="falla">
+<option value="no abre">La aplicacion no abre</option>
+    <option value="no loca">No aparece la localizacion</option>
+    <option value="errorenpage">No funciona la pagina CFE</option>
+</select>
+
 </div>
 </div> 
 <label class="control-label" for="priori">Prioridad</label>
 <div class="controls">
-<input type="text" name="prioridad" id="prioridad" />
-</div>
+<select name="prioridad" id="prioridad" >
+	<option value="alta">Alta</option>
+    <option value="media">Media</option>
+    <option value="baja">Baja</option>
+</select>
+
 <label class="control-label" for="tiempo r">Tiempo Respuesta</label>
 <div class="controls">
-<input type="text" name="tiempo respuesta" id="usuario" />
+<input type="text" name="tiemporespuesta" id="usuario" />
 </div>
 <label class="control-label" for="c.i.">C.I Relacionado</label>
 <div class="controls">
-<input type="text" name="c.i relacionado" id="c.i relacionado" />
+<input type="text" name="cirelacionado" id="c.i relacionado" />
 </div>
 <label class="control-label" for="con1">Contacto 1</label>
 <div class="controls">
@@ -40,7 +49,9 @@
 <div class="controls">
 <input type="text" name="contacto2" id="contacto2" />
 </div>
-<label class="control-label" for="estd">Estado</label>
+<label class="control-label" for="estd">
+  <select name="falla" id="falla" />
+  Estado</label>
 <div class="controls">
 <input type="text" name="estado" id="estado" />
 </div>
@@ -56,13 +67,14 @@
 <br>
 <label class="control-label" for="coments">Comentarios</label>
 <div class="controls">
-<textarea> 
+<textarea name="comentario"> 
 </textarea>
 </div>
 <div align="center">
 <input align="right" type="submit" name="Enviar" />
 </div>
 </form>
+</div>
 </div>
 </body>
 </html>
